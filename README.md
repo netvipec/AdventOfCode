@@ -9,3 +9,9 @@ VSCode tasks and launch file included in the code with commands for compiling an
 Solution implemented in C++.
 
 Compiled with gcc 10.1.0 with the following flags: `-O3 -march=native -std=c++20`
+
+### 2017
+
+Solution implemented in Rust.
+
+VSCode tasks and launch file included in the code with commands for compiling and executing every day.
