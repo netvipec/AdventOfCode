@@ -26,6 +26,12 @@ Trying to solve the problems in the minutes that they came out.
 
 All the problems expect to receive the input throught the standard input.
 
+# 2019
+
+Solution for advent of code 2019.
+
+Used for learning rust programming languages.
+
 # 2018
 
 Solution implemented in C++.
