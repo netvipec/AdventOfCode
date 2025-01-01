@@ -1,0 +1,142 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Debug",
+            "type": "shell",
+            "command": "cargo",
+            "args": [
+                "build"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$gcc",
+            "presentation": {
+                // "echo": false,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build Release",
+            "type": "shell",
+            "command": "cargo",
+            "args": [
+                "build",
+                "--release"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$gcc",
+            "presentation": {
+                // "echo": false,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Run Debug",
+            "type": "shell",
+            "command": "${workspaceFolder}/target/debug/day${config:day}",
+            "args": [
+                "<",
+                "./src/input"
+            ],
+            "options": {
+                "env": {
+                    "LD_PRELOAD": "libasan.so",
+                    // "RUST_BACKTRACE": "1"
+                },
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$gcc",
+            "presentation": {
+                // "echo": false,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": "Build Debug"
+        },
+        {
+            "label": "Run Debug Test",
+            "type": "shell",
+            "command": "${workspaceFolder}/target/debug/day${config:day}",
+            "args": [
+                "<",
+                "./src/input.sample"
+            ],
+            "options": {
+                "env": {
+                    "LD_PRELOAD": "libasan.so"
+                },
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$gcc",
+            "presentation": {
+                // "echo": false,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": "Build Debug"
+        },
+        {
+            "label": "Run Release",
+            "type": "shell",
+            "command": "${workspaceFolder}/target/release/day${config:day}",
+            "args": [
+                "<",
+                "./src/input"
+            ],
+            "options": {
+                "env": {
+                    "LD_PRELOAD": "libasan.so"
+                },
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$gcc",
+            "presentation": {
+                // "echo": false,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": "Build Release"
+        }
+    ]
+}

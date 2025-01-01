@@ -4,6 +4,12 @@ Solution implemented in Odin. First time using the language to solve any kind of
 
 VSCode tasks and launch file included in the code with commands for compiling and executing every day.
 
+# 2023
+
+Solution implemented in C++, Rust or Odin depending of the day.
+
+Compiled with gcc 10.1.0 with the following flags: `-O3 -march=native -std=c++20`. Rust and Odin contain vscode folder with commands to compile and debug the solutions.
+
 # 2022
 
 Solution implemented in C++.

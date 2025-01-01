@@ -1,0 +1,118 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-Wshadow",
+                "-Wall",
+                "-o",
+                "main",
+                "main.cpp",
+                "-g",
+                // "-fsanitize=address",
+                // "-fsanitize=undefined",
+                // "-D_GLIBCXX_DEBUG",
+                "-gdwarf-4"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$gcc",
+            "presentation": {
+                // "echo": false,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build Release",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-Wshadow",
+                "-Wall",
+                "-o",
+                "main",
+                "main.cpp",
+                "-g",
+                // "-fsanitize=address",
+                // "-fsanitize=undefined",
+                // "-D_GLIBCXX_DEBUG",
+                "-gdwarf-4",
+                "-O3"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$gcc",
+            "presentation": {
+                // "echo": false,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Run",
+            "type": "shell",
+            "command": "./main",
+            "args": [
+                "<",
+                "input"
+            ],
+            "presentation": {
+                // "echo": false,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": "Build"
+        },
+        {
+            "label": "Run - Test",
+            "type": "shell",
+            "command": "./main",
+            "args": [
+                "<",
+                "input.test"
+            ],
+            "presentation": {
+                // "echo": false,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": "Build"
+        }
+    ]
+}

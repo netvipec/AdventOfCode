@@ -1,0 +1,77 @@
+{
+	"version": "2.0.0",
+	"presentation": {
+		"reveal": "silent",
+		"panel": "shared",
+	},
+	"problemMatcher": {
+		"owner": "odin",
+		"source": "Odin",
+		"fileLocation": "absolute",
+		"pattern": {
+			"regexp": "^(.*?)(\\((\\d+):(\\d+)\\))\\s+(Syntax\\s+)?(Error|Warning):\\s+(.+)$",
+			"file": 1,
+			"line": 3,
+			"column": 4,
+			"severity": 6,
+			"message": 7
+		}
+	},
+	"tasks": [
+		{
+			"label": "Odin - Build",
+			"type": "shell",
+			"command": "odin",
+			"args": [
+				"build",
+				"${workspaceFolder}",
+				"-debug",
+				"-file",
+				"-vet",
+				"-strict-style",
+				"-show-timings"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "Odin - Run",
+			"type": "shell",
+			"command": "odin",
+			"args": [
+				"run",
+				"${workspaceFolder}",
+				"-debug",
+				"-file",
+				"-vet",
+				"-strict-style",
+				"-show-timings"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "Odin - Run - Release",
+			"type": "shell",
+			"command": "odin",
+			"args": [
+				"run",
+				"${workspaceFolder}",
+				"-debug",
+				"-o:speed",
+				"-file",
+				"-vet",
+				"-strict-style",
+				"-show-timings"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
